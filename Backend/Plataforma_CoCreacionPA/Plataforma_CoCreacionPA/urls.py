@@ -22,8 +22,10 @@ from django.urls import path
 from app_plataforma import views
 
 urlpatterns = [
+    path('', views.index, name='index'),  # Define una vista llamada 'index' para la URL raíz
     path('api/login/', views.LoginView.as_view(), name='login'),
     path('api/logout/', views.LogoutView.as_view(), name='logout'),
+    path('api/registration/', views.RegistrationView.as_view(), name='registration'),
     path('api/proyectos/', views.obtener_proyectos, name='obtener_proyectos'),
 ]
 
