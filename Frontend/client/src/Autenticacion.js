@@ -25,7 +25,7 @@ const Autenticacion = () => {
       setIsAuthenticated(true);
       resetLogoutTimer();
     }
-  }, [resetLogoutTimer]);
+  }, [resetLogoutTimer, handleLogout]); // Se agregó handleLogout como dependencia
 
   const handleLogin = () => {
     setIsAuthenticated(true);

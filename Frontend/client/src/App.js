@@ -9,7 +9,7 @@ import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 
 function App() {
-  const { isAuthenticated, handleLogin } = Autenticacion(); // Obtener el estado y las funciones de autenticación
+  const { isAuthenticated, handleLogin, handleLogout } = Autenticacion(); // Obtener el estado y las funciones de autenticación
 
   console.log("isAuthenticated:", isAuthenticated); // Debugging: Imprimir el estado de autenticación
 
@@ -38,8 +38,7 @@ function App() {
           {!isAuthenticated && <Route path="/register" element={<RegistrationForm />} />}
 
           {/* Ruta protegida para el Dashboard */}
-          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
-
+          <Route path="/dashboard" element={isAuthenticated ? <Dashboard onLogout={handleLogout} /> : <Navigate to="/login" />} />          
         </Routes>
       </div>
     </Router>

@@ -1,17 +1,15 @@
 // Dashboard.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Autenticacion from './Autenticacion';
 
-const Dashboard = () => {
-  const { handleLogout } = Autenticacion();
+const Dashboard = ({ onLogout }) => {
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
     // Llama a la función de cierre de sesión
-    handleLogout();
+    onLogout();
     // Redirige al usuario a la página de inicio de sesión
-    navigate('/HomePage');
+    navigate('/login');
   };
 
   return (

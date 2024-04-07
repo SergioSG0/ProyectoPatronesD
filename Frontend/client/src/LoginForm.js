@@ -20,7 +20,7 @@ const LoginForm = ({ onLogin }) => {
             // Actualizar el estado de autenticación en la aplicación
             onLogin();
             // Redirigir al usuario al dashboard después de iniciar sesión correctamente
-            navigate('/dashboard');
+
         } catch (error) {
             console.error('Error al iniciar sesión:', error);
         }
